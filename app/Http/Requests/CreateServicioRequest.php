@@ -25,7 +25,7 @@ class CreateServicioRequest extends FormRequest
             'titulo' => 'required|string|max:255',
             'category_id' => [
                 'required',
-                'exists:categories, id'
+                'exists:categories,id'
             ],
             'descripcion' => 'required|string',
             // 'image' => 'required|string',

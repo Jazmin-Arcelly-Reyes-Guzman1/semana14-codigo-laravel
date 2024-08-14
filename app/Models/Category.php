@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
+    // use HasFactory;
     
     public function servicios() {
         return $this->hasMany(Servicio::class);

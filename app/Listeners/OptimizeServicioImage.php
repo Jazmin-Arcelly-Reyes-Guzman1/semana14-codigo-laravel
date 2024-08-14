@@ -24,7 +24,7 @@ class OptimizeServicioImage implements ShouldQueue
     public function handle(ServicioSaved $event)
     {
         //
-        $image = Image::make (Storage::get($event->servicio->image))
+        $image = Image::make(Storage::get($event->servicio->image))
             ->widen(600) //Redimensionamos la imagen a 600 px
             ->limitColors(255) //Limitamos el color a 255
             ->encode(); //Volvemos a codificar la nueva imagen

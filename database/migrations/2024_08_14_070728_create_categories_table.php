@@ -21,6 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->nullable()->after('id');
             //Definimos la relación
             $table->foreign('category_id')->references('id')->on('categories');
+            // on('categories');
+            
         });
     }
 

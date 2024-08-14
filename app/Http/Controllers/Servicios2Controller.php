@@ -17,8 +17,11 @@ class Servicios2Controller extends Controller
      */
     public function index()
     {
-        $servicios= Servicio::oldest('id')->paginate(3);
-        return view('servicios',compact('servicios'));//
+        // $servicios= Servicio::oldest('id')->paginate(4);
+        // return view('servicios',compact('servicios'));//
+        return view('servicios', [
+            'servicios' => Servicio::with('category')->latest()->paginate(4)
+        ]);
     }
 
     /**
@@ -28,7 +31,7 @@ class Servicios2Controller extends Controller
     {
         return view('create',[
             'servicio'=>new Servicio,
-            'categories' => Category::pluck('name', 'id')
+            'categories' => Category::pluck('name', 'id'),
         ]);
     }
 

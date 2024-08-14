@@ -8,17 +8,18 @@
   </td>
 </tr>
 <tr>
-  <th>Categoria</th>
-  <td>
+<th>Categoria</th>
+<td>
     <select name="category_id" id="category_id">
-      <option value="">Seleccione</option>
-      @foreach($categories as $id => $name)
-      <option value="{{ $id }}"
-      @if($id == old('category_id', $servicio->category_id)) selected @endif
-      >{{ $name }}</option>
-      @endforeach
+        <option value="">Seleccione</option>
+        @foreach($categories as $id => $name)
+            <option value="{{ $id }}"
+                @if($id == old('category_id', $servicio->category_id)) selected @endif
+            >{{ $name }}</option>
+        @endforeach
     </select>
-  </td>
+</td>
+
 </tr>
 
 
